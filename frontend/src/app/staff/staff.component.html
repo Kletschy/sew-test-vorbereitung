@@ -1,0 +1,13 @@
+<p>Beautiful find Staff Form:</p>
+
+<form class="form">
+  <input type="text" name="id" id="id" placeholder="id" [(ngModel)]="id" (change)="idChange()">
+  <input type="text" name="firstname" id="firstname" placeholder="firstname" [(ngModel)]="firstname" [disabled]="id != ''">
+  <input type="text" name="lastname" id="lastname" placeholder="lastname" [(ngModel)]="lastname" [disabled]="id != ''">
+  <button (click)="submit()">submit</button>
+</form>
+
+<label>Staff: </label>
+<ul if="result">
+  <li *ngFor="let emp of staff">{{emp['firstname']}} {{emp['lastname']}}</li>
+</ul>
