@@ -16,9 +16,9 @@ export class StaffComponent implements OnInit {
   staff: Employee[] = []
 
   constructor(private router: Router, private route: ActivatedRoute, private httpService: HttpService) {
-    this.route.params.subscribe(params => {
-      this.id = params["id"] == null ? '' : params["id"]
-    })
+    if (route.snapshot.params["id"] != null){
+      this.id = route.snapshot.params["id"];
+    }
   }
 
   ngOnInit(): void {
